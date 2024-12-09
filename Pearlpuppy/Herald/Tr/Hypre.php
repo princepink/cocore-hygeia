@@ -1,6 +1,11 @@
 <?php
 namespace Pearlpuppy\Herald;
 
+use Pearlpuppy\
+{
+    Lemonade,
+};
+
 /**
  * @file Hypre
  */
@@ -12,7 +17,12 @@ trait Tr_Hypre {
 
     // Mixins
 
-    use Tr_HypreLime;
+    /**
+     *
+     */
+    use Lemonade\Tr_HypreLime;
+
+    // Properties
 
     // Methods
 

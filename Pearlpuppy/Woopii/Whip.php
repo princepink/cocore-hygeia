@@ -9,6 +9,7 @@ use Pearlpuppy\
 
 /**
  *  @file   Whip
+ *  @since  ver. 0.2.0 (edit. Sovereign)
  *      renamed from 'WPXtra' on ver. 0.10.5
  */
 
@@ -59,20 +60,25 @@ final class Whip
     );
 
     /**
-     *
+     *  @since  ver. 0.6.1 (edit. Sovereign)
+     *  @update ver. 0.20.1 (edit. Hygeia)
      */
     public static $plugin_headers = array(
-        'Name'        => 'Plugin Name',
-        'PluginURI'   => 'Plugin URI',
-        'Version'     => 'Version',
-        'Description' => 'Description',
-        'Author'      => 'Author',
-        'AuthorURI'   => 'Author URI',
-        'TextDomain'  => 'Text Domain',
-        'DomainPath'  => 'Domain Path',
-        'Network'     => 'Network',
+        'Name'            => 'Plugin Name',
+        'PluginURI'       => 'Plugin URI',
+        'Version'         => 'Version',
+        'Description'     => 'Description',
+        'Author'          => 'Author',
+        'AuthorURI'       => 'Author URI',
+        'TextDomain'      => 'Text Domain',
+        'DomainPath'      => 'Domain Path',
+        'Network'         => 'Network',
+        'RequiresWP'      => 'Requires at least',
+        'RequiresPHP'     => 'Requires PHP',
+        'UpdateURI'       => 'Update URI',
+        'RequiresPlugins' => 'Requires Plugins',
         // Site Wide Only is deprecated in favor of Network.
-        '_sitewide'   => 'Site Wide Only',
+        '_sitewide'       => 'Site Wide Only',
     );
 
     /**
@@ -111,11 +117,6 @@ final class Whip
         'jquery' => 'script',
     );
 
-    /**
-     *  @since ver. 0.11.1 (edit. Pierre)
-     */
-    public static $b64_prefix = 'data:image/svg+xml;base64,';
-
     // Methods
 
     /**
@@ -150,16 +151,6 @@ final class Whip
         global $genome;
         $edition_dir = strtolower($genome->edition);
         return self::wpx_product_dir('path', $file) . "$edition_dir/";
-    }
-
-    /**
-     *
-     */
-    public static function wpx_path2uri($file) {
-        $uri_pre = home_url('/');
-        // $path_pre = \get_home_path();
-        $path_pre = ABSPATH;
-        return esc_url(str_replace($path_pre, $uri_pre, $file));
     }
 
     /**

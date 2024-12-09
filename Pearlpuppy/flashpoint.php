@@ -1,6 +1,8 @@
 <?php
 namespace Pearlpuppy\NittyGritty;
 
+use Pearlpuppy\Lemonade\Sandra;
+
 /**
  *  @file   Flashpoint
  *      Activates core.
@@ -34,7 +36,8 @@ define('D_S', DIRECTORY_SEPARATOR);
 spl_autoload_register(__NAMESPACE__ . '\loadie');
 
 /**
- *
+ *  Autoloader for under the Production directory
+ *  (from here or deeper)
  */
 function loadie($class)
 {
@@ -52,8 +55,14 @@ function loadie($class)
 
 /**
  *  ---------------------------
+ *  Code tester
  *  ---------------------------
  */
+
+/**
+ *
+ */
+$sandra = new Sandra();
 
 /**
  *  ---------------------------

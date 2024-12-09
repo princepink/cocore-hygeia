@@ -43,6 +43,21 @@ final class Orbit
     /**
      *
      */
+    private string $production_dir;
+
+    /**
+     *
+     */
+    private string $brand_dir;
+
+    /**
+     *
+     */
+    private string $edition_dir;
+
+    /**
+     *
+     */
 
     // Constructor
 
@@ -52,6 +67,7 @@ final class Orbit
     private function __construct()
     {
         $this->plugin_file = Whip::safePath(_P_FILE);
+        $this->assignSectorDirs();
     }
 
     // Methods
@@ -62,10 +78,36 @@ final class Orbit
      *  @return Fullpath 
      *  @since  ver. 0.20.0 (edit. Hygeia)
      */
-    protected function pave(string ...$args): string
+    private function pave(string ...$args): string
     {
         array_unshift($args, $this->pDir());
         return implode(DIRECTORY_SEPARATOR, $args);
+    }
+
+    /**
+     *
+     *  @since  ver. 0.20.1 (edit. Hygeia)
+     */
+    public function avantPave(array $args, ?string $file = null): string
+    {
+        if ($file) {
+            $args[] = $file;
+        }
+        return $this->pave(...$args);
+    }
+
+    /**
+     *
+     *  @since  ver. 0.20.1 (edit. Hygeia)
+     */
+    private function assignSectorDirs(): void
+    {
+        $sectors = explode("\\", __NAMESPACE__);
+        $this->edition_dir = Whip::safePath($this->pave(...$sectors));
+        array_pop($sectors);
+        $this->brand_dir = Whip::safePath($this->pave(...$sectors));
+        array_pop($sectors);
+        $this->production_dir = Whip::safePath($this->pave(...$sectors));
     }
 
     /**
@@ -81,7 +123,7 @@ final class Orbit
     }
 
     /**
-     *
+     *  @return Product plugin directory, no slash on tail
      *  @since  ver. 0.20.0 (edit. Hygeia)
      */
     public function pDir(): string
@@ -100,30 +142,64 @@ final class Orbit
 
     /**
      *
-     *  @since  ver. 0.20.0 (edit. Hygeia)
+     *  @since  ver. 0.20.1 (edit. Hygeia)
      */
-    public function incPath(string $file = ''): string
+    public function incPath(?string $file = null): string
     {
-        return $this->pave('inclusions', $file);
+        $args = array(
+            'inclusions',
+        );
+        return $this->avantPave($args, $file);
     }
 
     /**
      *
-     *  @since  ver. 0.20.0 (edit. Hygeia)
+     *  @since  ver. 0.20.1 (edit. Hygeia)
      */
-    public function imgPath(string $file = ''): string
-    {}
+    public function imgPath(?string $file = null): string
+    {
+        $args = array(
+            'assets',
+            'images',
+        );
+        return $this->avantPave($args, $file);
+    }
 
     /**
      *
-     *  @since  ver. 0.20.0 (edit. Hygeia)
+     *  @since  ver. 0.20.1 (edit. Hygeia)
      */
-    public function imgUri(string $file = ''): string
-    {}
+    public function imgUri(?string $file = null): string
+    {
+        return Whip::wpcPath2Uri($this->imgPath($file));
+    }
 
     /**
      *
+     *  @since  ver. 0.20.1 (edit. Hygeia)
      */
+    public function productionDir(): string
+    {
+        return Whip::redPath($this->production_dir);
+    }
+
+    /**
+     *
+     *  @since  ver. 0.20.1 (edit. Hygeia)
+     */
+    public function brandDir(): string
+    {
+        return Whip::redPath($this->brand_dir);
+    }
+
+    /**
+     *
+     *  @since  ver. 0.20.1 (edit. Hygeia)
+     */
+    public function editionDir(): string
+    {
+        return Whip::redPath($this->edition_dir);
+    }
 
     /**
      *

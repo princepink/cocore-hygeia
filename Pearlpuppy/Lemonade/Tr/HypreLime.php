@@ -1,5 +1,10 @@
 <?php
-namespace Pearlpuppy\Herald;
+namespace Pearlpuppy\Lemonade;
+
+use Pearlpuppy\
+{
+    Herald\Tribune,
+};
 
 /**
  * @file
@@ -137,6 +142,12 @@ trait Tr_HypreLime {
      */
     public static $emp_format = '<%1$s%2$s />';
 
+    /**
+     *  @since  ver. 0.11.1 (edit. Pierre, in Whip)
+     *  @update ver. 0.20.1 (edit. Hygeia)
+     */
+    public static $svg_b64_pref = 'data:image/svg+xml;base64,';
+
     // Methods
 
     /**
@@ -221,6 +232,14 @@ trait Tr_HypreLime {
                 break;
         }
         return $obj;
+    }
+
+    /**
+     *  @since  ver. 0.20.1 (edit. Hygeia)
+     */
+    public static function svgB64(string $svg_file): string
+    {
+        return self::$svg_b64_pref . base64_encode($svg_file);
     }
 
     /**

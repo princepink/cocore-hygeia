@@ -5,7 +5,6 @@ use Pearlpuppy\
 {
     CoCore\Hygeia,
     Woopii\Whip,
-    Lemonade\Sandra,
 };
 
 /**
@@ -15,7 +14,7 @@ use Pearlpuppy\
 /**
  *
  */
-class WpDashboardSetup extends Hygeia\Abs_Hook
+class WpDashboardSetup extends Hygeia\Abs_xHook
 {
 
 	// Mixins
@@ -62,9 +61,9 @@ class WpDashboardSetup extends Hygeia\Abs_Hook
      */
     public function sandyContent()
     {
+        global $sandra;
         $orb = Hygeia\Orbit::getInstance();
-        $sandra = new Sandra();
-        $sandra->hop('hoge');
+        $sandra->hop($this, 'wds');
         include_once($orb->incPath('sandy.php'));
         $sandra->expose();
     }

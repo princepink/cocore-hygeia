@@ -15,7 +15,7 @@ trait Tr_Citrine {
     /**
      *
      */
-    use \Pearlpuppy\Herald\Tr_HypreLime;
+    use Tr_HypreLime;
 
     /**
      *

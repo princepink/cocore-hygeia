@@ -1,11 +1,10 @@
 <?php
 namespace Pearlpuppy\Woopii;
 
-use Pearlpuppy\CoCore\Myt;
-use Pearlpuppy\CoCore\Myt\Lime;
-
 /**
- * @file
+ *  @file   WpxLime
+ *  @since  ver. 0.6.3 (edit. Sovereign)
+ *  @update ver. 0.20.1 (edit. Hygeia)
  */
 
 /**
@@ -77,18 +76,12 @@ trait Tr_WpxLime {
     }
 
     /**
-     *  -------------------------------
-     *  0.10.x - below this line
-     *  -------------------------------
+     *
      */
 
     /**
      *
      */
-    public static function awpNoticeLemon(): Myt\PQueue
-    {
-        
-    }
 
     /**
      *  -------------------------------
