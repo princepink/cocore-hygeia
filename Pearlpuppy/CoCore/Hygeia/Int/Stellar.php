@@ -2,13 +2,13 @@
 namespace Pearlpuppy\CoCore\Hygeia;
 
 /**
- *  @file   Gene
+ *  @file   Stellar
  */
 
 /**
  *
  */
-interface Int_Gene
+interface Int_Stellar extends Int_Gene
 {
 
     // Constants
@@ -30,10 +30,6 @@ interface Int_Gene
      */
 
     // Methods
-
-    /**
-     *
-     */
 
     /**
      *

@@ -24,17 +24,11 @@ trait Tr_Castella
      *
      */
 
-    // Constants
-
-    /**
-     *
-     */
-
     // Properties
 
     /**
      *  An array of Int_Castor
-     */
+     *
     protected array $voyagers;
 
     // Constructor

@@ -71,7 +71,7 @@ trait Tr_Geny
     /**
      *  @since  ver. 0.20.0 (edit. Hygeia)
      *  @update ver. 0.20.1 (edit. Hygeia)
-     */
+     *
     protected function inform(): void
     {
         $orb = $this->orbit();

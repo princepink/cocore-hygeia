@@ -1,7 +1,7 @@
 <?php
 namespace Pearlpuppy\CoCore\Hygeia;
 
-global $sandra, $hoge;
+global $sandra, $cocore;
 
 echo '<h3>edition Hygeia / operation Pierre</h3>';
 
@@ -9,6 +9,7 @@ echo '<h3>edition Hygeia / operation Pierre</h3>';
  *
  */
 $orb = Orbit::getInstance();
+$star = Star::getInstance();
 
 /**
  *  ===========================
@@ -18,15 +19,30 @@ $orb = Orbit::getInstance();
  *   hop()
  *  ---------------------------
  */
-$sandra->hop($hoge, 'hoge');
+$sandra->hop($cocore, 'cocore');
+$sandra->hop($star, 'star');
 $sandra->hop($orb, 'orb');
-$mage = ['mage'];
-array_push($mage, null);
-$sandra->hop($mage, 'mage');
 
 /**
  *
  */
+$foo = array(
+    'fruits' => ['apple', 'banana', 'strawberry'],
+    999,
+    'gems' => ['diamond', 'amber', 'pearl'],
+);
+$recit = new \RecursiveArrayIterator($foo);
+
+$recit['gems']['red'] = 'ruby';
+
+$bar = array(
+    'fruits' => ['orange'],
+);
+
+#$buzz = array_merge_recursive($recit, $bar);
+
+$sandra->hop($recit, 'recit');
+#$sandra->hop($buzz, 'buzz');
 
 /**
  *  ---------------------------
@@ -36,7 +52,7 @@ $sandra->hop($mage, 'mage');
 
 /**
  *
- */
+ *
 ?>
 <h3>IMG</h3>
 <img src="<?php echo $orb->imgUri('icon-cocore.svg'); ?>" />

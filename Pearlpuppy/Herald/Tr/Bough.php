@@ -89,7 +89,7 @@ trait Tr_Bough {
 
     /**
      *  @since  ver. 0.12.2 (edit. Pierre)
-     */
+     *
     public static function starGaze(bool $nice = true)
     {
         $star = Star::getInstance();

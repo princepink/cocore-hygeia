@@ -1,0 +1,11 @@
+{
+    "castors": {
+        "action": [
+            "wp_dashboard_setup",
+            "admin_menu",
+            "init"
+        ],
+        "filter": [],
+        "support": "// !!! NOT AVAILABLE FOR PLUGINS"
+    }
+}

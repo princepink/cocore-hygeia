@@ -1,0 +1,9 @@
+{
+    "castors": {
+        "action": [
+            "init"
+        ],
+        "filter": [],
+        "support": "// !!! NOT AVAILABLE FOR PLUGINS"
+    }
+}

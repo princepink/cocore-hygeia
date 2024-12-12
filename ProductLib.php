@@ -1,16 +1,26 @@
 <?php
-namespace Pearlpuppy\CoCore\Hygeia;
+namespace CoCoreProductRoot;
+
+use Pearlpuppy\
+{
+    CoCore\Hygeia,
+};
 
 /**
- *  @file   Scheme
- *  @since  ver. 0.10.3 (edit. Pierre)
+ *  @file   
  */
 
 /**
  *
  */
-interface Int_Scheme extends Int_Gene
+class ProductLib extends Hygeia\Castle
 {
+
+	// Mixins
+
+    /**
+     *
+     */
 
     // Constants
 
@@ -36,5 +46,5 @@ interface Int_Scheme extends Int_Gene
      *
      */
 
-//[EOAC]*/
+//[EOC]*/
 }

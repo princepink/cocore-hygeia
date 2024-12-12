@@ -27,7 +27,7 @@ abstract class Abs_Hook implements Int_Castor
     /**
      *
      */
-    const LIB_FORMAT = __NAMESPACE__ . '\St_%ss';
+#    const LIB_FORMAT = __NAMESPACE__ . '\St_%ss';
 
     // Properties
 
@@ -39,21 +39,26 @@ abstract class Abs_Hook implements Int_Castor
     /**
      *
      */
-    protected $priority = 10;
+    protected int $priority = 10;
 
     /**
      *
      */
-    protected $accepted_args = 1;
+    protected int $accepted_args = 1;
 
     /**
      *
      */
-    protected $funk = 'add_';
+    protected string $funk = 'add_';
+
+    /**
+     *
+     */
+    protected string $hook_type;
 
     /**
      *  @since  ver. 0.20.1 (edit. Hygeia)
-     */
+     *
     protected string $lib;
 
     // Constructor
@@ -84,8 +89,9 @@ abstract class Abs_Hook implements Int_Castor
     {
         $names = explode('\\', static::class);
         $name = array_pop($names);
-        $this->lib = sprintf(self::LIB_FORMAT, $name);
-        $this->funk .= strtolower($name);
+#        $this->lib = sprintf(self::LIB_FORMAT, $name);
+        $this->hook_type = strtolower($name);
+        $this->funk .= $this->hook_type;
     }
 
     /**
@@ -135,8 +141,8 @@ abstract class Abs_Hook implements Int_Castor
      */
     public function crook(...$args)
     {
-        $args['#c'] = $this;
-        call_user_func_array([$this->lib, 'cocore' . Tribune::snake2Pasc($this->hook_name)], $args);
+        $args['_c'] = $this;
+        call_user_func_array([static::LIB, $this->hook_type . Tribune::snake2Pasc($this->hook_name)], $args);
     }
 
 //[EOAC]*/

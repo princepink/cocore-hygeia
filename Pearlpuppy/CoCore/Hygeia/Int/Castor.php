@@ -18,6 +18,7 @@ interface Int_Castor extends Int_Gene
     /**
      *
      */
+    const LIB = __NAMESPACE__ . '\Castle';
 
     // Properties
 
@@ -44,7 +45,7 @@ interface Int_Castor extends Int_Gene
     public function punk();
 
     /**
-     *  Inside this method, doing the add_foo(†) function of WP for Scheme.
+     *  Inside this method, doing the function　$funk(†) of WP for Scheme.
      *      †) i.e. add_action|filter, add|remove_theme_support
      *  @since  ver. 0.20.1 (edit. Hygeia)
      */

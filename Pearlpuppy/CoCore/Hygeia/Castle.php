@@ -4,14 +4,14 @@ namespace Pearlpuppy\CoCore\Hygeia;
 use Pearlpuppy\Tailor;
 
 /**
- *  @file   Actions
+ *  @file   Castle
  *  @since  ver. 0.20.1 (edit. Hygeia)
  */
 
 /**
  *  Library of CoCore system hooks
  */
-class St_Actions
+class Castle
 {
 
 	// Mixins
@@ -52,18 +52,18 @@ class St_Actions
     /**
      *
      */
-    public static function cocoreWpDashboardSetup(...$args)
+    public static function actionWpDashboardSetup(...$args)
     {
-        $brand = $args['#c']->nice('brand');
-        wp_add_dashboard_widget("$brand-sandy", 'Sandy', [$this, 'sandyContent'], priority: 'high');
+        $brand = $args['_c']->nice('brand');
+        wp_add_dashboard_widget("$brand-sandy", 'Sandy', [self::class, 'sandyContent'], priority: 'high');
     }
 
     /**
      *
      */
-    public static function cocoreAdminMenu(...$args)
+    public static function actionAdminMenu(...$args)
     {
-        $brand = $args['#c']->dub('brand');
+        $brand = $args['_c']->dub('brand');
         $b_nice = strtolower($brand);
         add_menu_page("$brand Page", "$brand Menu", 'edit_posts', "$b_nice-settings");
     }
@@ -71,6 +71,21 @@ class St_Actions
     /**
      *
      */
+    public static function sandyContent()
+    {
+        global $sandra;
+        $orb = Orbit::getInstance();
+        include_once($orb->incPath('sandy.php'));
+        $sandra->expose();
+    }
+
+    /**
+     *
+     */
+    public static function actionInit(...$args)
+    {
+        register_post_type('project', ['public' => true]);
+    }
 
     /**
      *

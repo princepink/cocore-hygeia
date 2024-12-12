@@ -17,7 +17,7 @@ use Pearlpuppy\
 /**
  *  @since  ver. 0.20.0 (edit. Hygeia)
  */
-final class Orbit
+final class Orbit implements Int_Stellar
 {
 
 	// Mixins
@@ -177,28 +177,35 @@ final class Orbit
     /**
      *
      *  @since  ver. 0.20.1 (edit. Hygeia)
+     *  @update ver. 0.20.2 (edit. Hygeia)
      */
-    public function productionDir(): string
+    public function productionDir(?string $file = null): string
     {
-        return Whip::redPath($this->production_dir);
+        $path = Whip::redPath($this->production_dir);
+        return $path . $file ? DIRECTORY_SEPARATOR . $file : '';
     }
 
     /**
      *
      *  @since  ver. 0.20.1 (edit. Hygeia)
+     *  @update ver. 0.20.2 (edit. Hygeia)
      */
-    public function brandDir(): string
+    public function brandDir(?string $file = null): string
     {
-        return Whip::redPath($this->brand_dir);
+        $path = Whip::redPath($this->brand_dir);
+        return $path . $file ? DIRECTORY_SEPARATOR . $file : '';
     }
 
     /**
      *
      *  @since  ver. 0.20.1 (edit. Hygeia)
+     *  @update ver. 0.20.2 (edit. Hygeia)
      */
-    public function editionDir(): string
+    public function editionDir(?string $file = null): string
     {
-        return Whip::redPath($this->edition_dir);
+        $path = Whip::redPath($this->edition_dir);
+        $path .= $file ? DIRECTORY_SEPARATOR . $file : '';
+        return $path;
     }
 
     /**
