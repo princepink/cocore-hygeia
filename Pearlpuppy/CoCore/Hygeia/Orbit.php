@@ -10,7 +10,7 @@ use Pearlpuppy\
 
 /**
  *  @file   Orbit
- *      Controlling paths.
+ *      Paths controller
  *  @since  0.20.0 (edit. Hygeia)
  */
 
@@ -182,7 +182,8 @@ final class Orbit implements Int_Stellar
     public function productionDir(?string $file = null): string
     {
         $path = Whip::redPath($this->production_dir);
-        return $path . $file ? DIRECTORY_SEPARATOR . $file : '';
+        $path .= $file ? DIRECTORY_SEPARATOR . $file : '';
+        return $path;
     }
 
     /**
@@ -193,7 +194,8 @@ final class Orbit implements Int_Stellar
     public function brandDir(?string $file = null): string
     {
         $path = Whip::redPath($this->brand_dir);
-        return $path . $file ? DIRECTORY_SEPARATOR . $file : '';
+        $path .= $file ? DIRECTORY_SEPARATOR . $file : '';
+        return $path;
     }
 
     /**

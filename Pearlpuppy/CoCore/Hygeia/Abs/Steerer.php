@@ -2,15 +2,15 @@
 namespace Pearlpuppy\CoCore\Hygeia;
 
 /**
- *  @file   Theme
- *  @since  ver. 0.10.5 (edit. Pierre)
- *  @update ver. 0.21.0 (edit. Hygeia)
+ *  @file   Steerer
+ *  @since  ver. 0.21.0 (edit. Pierre)
+ *  @update ver. 
  */
 
 /**
  *
  */
-abstract class Abs_Theme extends Abs_Steerer implements Int_Scheme
+abstract class Abs_Steerer extends Abs_Legislative implements Int_Agent
 {
 
 	// Mixins
@@ -18,6 +18,8 @@ abstract class Abs_Theme extends Abs_Steerer implements Int_Scheme
     /**
      *
      */
+    use Tr_Geny;
+    use Tr_Schengen;
 
     // Constants
 

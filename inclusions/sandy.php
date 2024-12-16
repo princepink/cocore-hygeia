@@ -19,6 +19,7 @@ $star = Star::getInstance();
  *   hop()
  *  ---------------------------
  */
+$sandra->hop(defined('COCORE_FAMILIAR'), 'CF');
 $sandra->hop($cocore, 'cocore');
 $sandra->hop($star, 'star');
 $sandra->hop($orb, 'orb');
@@ -41,7 +42,17 @@ $bar = array(
 
 #$buzz = array_merge_recursive($recit, $bar);
 
+$arr_a = ['foo', 'bar', 'buzz'];
+$arr_b = ['rock' => 'shout', 'jazz' => 'swing', 'hiphop' => 'rhyme'];
+$itr_a = new \ArrayIterator($arr_a);
+$itr_b = new \ArrayIterator($arr_b);
+$appit = new \AppendIterator;
+$appit->append($itr_a);
+$appit->append($itr_b);
+
+$sandra->hop($appit->getArrayIterator(), 'appit');
 $sandra->hop($recit, 'recit');
+$sandra->hop([...$foo], '...foo');
 #$sandra->hop($buzz, 'buzz');
 
 /**

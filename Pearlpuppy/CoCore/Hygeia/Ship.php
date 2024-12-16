@@ -1,16 +1,23 @@
 <?php
 namespace Pearlpuppy\CoCore\Hygeia;
 
+use Pearlpuppy\
+{
+    Tailor,
+    Herald\Tribune,
+    Woopii\Whip,
+};
+
 /**
- *  @file   Theme
- *  @since  ver. 0.10.5 (edit. Pierre)
- *  @update ver. 0.21.0 (edit. Hygeia)
+ *  @file   Ship
+ *      Magazine of Castors
+ *  @since  0.21.0 (edit. Hygeia)
  */
 
 /**
  *
  */
-abstract class Abs_Theme extends Abs_Steerer implements Int_Scheme
+class Ship implements Int_Vessel
 {
 
 	// Mixins
@@ -18,6 +25,7 @@ abstract class Abs_Theme extends Abs_Steerer implements Int_Scheme
     /**
      *
      */
+    use Tailor\Solo;
 
     // Constants
 
@@ -30,6 +38,7 @@ abstract class Abs_Theme extends Abs_Steerer implements Int_Scheme
     /**
      *
      */
+    private \RecursiveArrayIterator $voyagers_rai;
 
     // Constructor
 
@@ -43,5 +52,5 @@ abstract class Abs_Theme extends Abs_Steerer implements Int_Scheme
      *
      */
 
-//[EOAC]*/
+//[EOC]*/
 }

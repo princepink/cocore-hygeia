@@ -82,6 +82,26 @@ final class Whip
     );
 
     /**
+     *  @since  ver. 0.21.0 (edit. Hygeia)
+     */
+    public static $theme_headers = array(
+        'Name'        => 'Theme Name',
+        'ThemeURI'    => 'Theme URI',
+        'Description' => 'Description',
+        'Author'      => 'Author',
+        'AuthorURI'   => 'Author URI',
+        'Version'     => 'Version',
+        'Template'    => 'Template',
+        'Status'      => 'Status',
+        'Tags'        => 'Tags',
+        'TextDomain'  => 'Text Domain',
+        'DomainPath'  => 'Domain Path',
+        'RequiresWP'  => 'Requires at least',
+        'RequiresPHP' => 'Requires PHP',
+        'UpdateURI'   => 'Update URI',
+    );
+
+    /**
      *  @since ver. 0.10.5 (edit. Pierre)
      */
     public static $theme_gens = array(
@@ -415,8 +435,13 @@ final class Whip
     }
 
     /**
-     *
+     *  @param $safe_path   Begins just under the WP content directory
+     *  @since  ver. 0.21.0 (edit. Hygeia)
      */
+    public static function spathUri(string $safe_path): string
+    {
+        return content_url($safe_path);
+    }
 
     /**
      *

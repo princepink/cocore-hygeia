@@ -5,5 +5,8 @@
         ],
         "filter": [],
         "support": "// !!! NOT AVAILABLE FOR PLUGINS"
+    },
+    "projects": {
+        "Pierre"
     }
 }

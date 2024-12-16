@@ -2,15 +2,14 @@
 namespace Pearlpuppy\CoCore\Hygeia;
 
 /**
- *  @file   Theme
- *  @since  ver. 0.10.5 (edit. Pierre)
- *  @update ver. 0.21.0 (edit. Hygeia)
+ *  @file   Legislative
+ *  @since  ver. 0.20.2 (edit. Hygeia)
  */
 
 /**
- *
+ *  Reads JSON file and stores the preset data
  */
-abstract class Abs_Theme extends Abs_Steerer implements Int_Scheme
+abstract class Abs_Legislative
 {
 
 	// Mixins
@@ -30,6 +29,7 @@ abstract class Abs_Theme extends Abs_Steerer implements Int_Scheme
     /**
      *
      */
+    protected array $canons;
 
     // Constructor
 
@@ -38,6 +38,11 @@ abstract class Abs_Theme extends Abs_Steerer implements Int_Scheme
      */
 
     // Methods
+
+    /**
+     *
+     */
+    abstract protected function canonise();
 
     /**
      *

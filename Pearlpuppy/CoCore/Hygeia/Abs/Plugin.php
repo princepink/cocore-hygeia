@@ -10,13 +10,13 @@ use Pearlpuppy\
 /**
  *  @file   Plugin
  *  @since  ver. 0.10.1 (edit. Pierre)
- *  @update ver. 0.20.1 (edit. Hygeia)
+ *  @update ver. 0.21.0 (edit. Hygeia)
  */
 
 /**
  *
  */
-abstract class Abs_Plugin implements Int_Scheme
+abstract class Abs_Plugin extends Abs_Steerer implements Int_Scheme, Int_Conductor
 {
 
 	// Mixins
@@ -24,8 +24,6 @@ abstract class Abs_Plugin implements Int_Scheme
     /**
      *
      */
-    use Tr_Geny;
-    use Tr_Schengen;
 
     // Constants
 
@@ -117,6 +115,12 @@ abstract class Abs_Plugin implements Int_Scheme
             }
         }
     }
+
+    /**
+     *
+     */
+    protected function canonise()
+    {}
 
     /**
      *
