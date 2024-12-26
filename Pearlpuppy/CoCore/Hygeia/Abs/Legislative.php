@@ -40,7 +40,7 @@ abstract class Abs_Legislative
     // Methods
 
     /**
-     *
+     *  Transforms the JSON files to an array
      */
     abstract protected function canonise();
 

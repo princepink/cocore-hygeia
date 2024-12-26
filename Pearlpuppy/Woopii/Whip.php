@@ -419,8 +419,9 @@ final class Whip
     /**
      *  Reduces safePath to a fullpath
      *  @since  ver. 0.20.0 (edit. Hygeia)
+     *  @update ver. 0.21.1 (edit. Hygeia)
      */
-    public static function redPath(string $safe_path): string
+    public static function awpContentDir(string $safe_path = ''): string
     {
         return WP_CONTENT_DIR . $safe_path;
     }
@@ -435,13 +436,12 @@ final class Whip
     }
 
     /**
-     *  @param $safe_path   Begins just under the WP content directory
-     *  @since  ver. 0.21.0 (edit. Hygeia)
+     *
      */
-    public static function spathUri(string $safe_path): string
-    {
-        return content_url($safe_path);
-    }
+
+    /**
+     *
+     */
 
     /**
      *

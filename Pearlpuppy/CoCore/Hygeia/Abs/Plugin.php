@@ -54,6 +54,7 @@ abstract class Abs_Plugin extends Abs_Steerer implements Int_Scheme, Int_Conduct
         $this->bapt();
         $this->inform($file);
         $this->troop();
+        $this->canonise();
     }
 
     // Methods
@@ -117,10 +118,31 @@ abstract class Abs_Plugin extends Abs_Steerer implements Int_Scheme, Int_Conduct
     }
 
     /**
-     *
+     *  Transforms the JSON files to an array
+     *  @since  ver. 0.21.1 (edit. Hygeia)
      */
     protected function canonise()
-    {}
+    {
+        $orb = $this->orbit();
+        $this->canons['edition'] = Tribune::parseJsonFile($orb->editionDir('edition.json'), true);
+        $this->canons['product'] = Tribune::parseJsonFile($orb->productDir('product.json'), true);
+    }
+
+    /**
+     *
+     *  @since  ver. 0.21.1 (edit. Hygeia)
+     */
+    protected function subCanonise(array &$canons): void
+    {
+        if (empty($canons['product']['projects'])) {
+            return;
+        }
+        $projects = $canons['product']['projects'];
+        foreach ($projects as $project) {
+            $nice = strtolower($project);
+            # PND
+        }
+    }
 
     /**
      *

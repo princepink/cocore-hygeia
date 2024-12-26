@@ -58,6 +58,21 @@ final class Orbit implements Int_Stellar
     /**
      *
      */
+    private string $product_dir;
+
+    /**
+     *
+     */
+    private string $project_dir;
+
+    /**
+     *
+     */
+    private string $dress_dir;
+
+    /**
+     *
+     */
 
     // Constructor
 
@@ -88,7 +103,7 @@ final class Orbit implements Int_Stellar
      *
      *  @since  ver. 0.20.1 (edit. Hygeia)
      */
-    public function avantPave(array $args, ?string $file = null): string
+    public function avantPave(array $args, string $file = ''): string
     {
         if ($file) {
             $args[] = $file;
@@ -144,7 +159,7 @@ final class Orbit implements Int_Stellar
      *
      *  @since  ver. 0.20.1 (edit. Hygeia)
      */
-    public function incPath(?string $file = null): string
+    public function incPath(string $file = ''): string
     {
         $args = array(
             'inclusions',
@@ -156,7 +171,7 @@ final class Orbit implements Int_Stellar
      *
      *  @since  ver. 0.20.1 (edit. Hygeia)
      */
-    public function imgPath(?string $file = null): string
+    public function imgPath(string $file = ''): string
     {
         $args = array(
             'assets',
@@ -169,7 +184,7 @@ final class Orbit implements Int_Stellar
      *
      *  @since  ver. 0.20.1 (edit. Hygeia)
      */
-    public function imgUri(?string $file = null): string
+    public function imgUri(string $file = ''): string
     {
         return Whip::wpcPath2Uri($this->imgPath($file));
     }
@@ -177,11 +192,11 @@ final class Orbit implements Int_Stellar
     /**
      *
      *  @since  ver. 0.20.1 (edit. Hygeia)
-     *  @update ver. 0.20.2 (edit. Hygeia)
+     *  @update ver. 0.21.1 (edit. Hygeia)
      */
-    public function productionDir(?string $file = null): string
+    public function productionDir(string $file = ''): string
     {
-        $path = Whip::redPath($this->production_dir);
+        $path = Whip::awpContentDir($this->production_dir);
         $path .= $file ? DIRECTORY_SEPARATOR . $file : '';
         return $path;
     }
@@ -189,11 +204,11 @@ final class Orbit implements Int_Stellar
     /**
      *
      *  @since  ver. 0.20.1 (edit. Hygeia)
-     *  @update ver. 0.20.2 (edit. Hygeia)
+     *  @update ver. 0.21.1 (edit. Hygeia)
      */
-    public function brandDir(?string $file = null): string
+    public function brandDir(string $file = ''): string
     {
-        $path = Whip::redPath($this->brand_dir);
+        $path = Whip::awpContentDir($this->brand_dir);
         $path .= $file ? DIRECTORY_SEPARATOR . $file : '';
         return $path;
     }
@@ -201,11 +216,33 @@ final class Orbit implements Int_Stellar
     /**
      *
      *  @since  ver. 0.20.1 (edit. Hygeia)
-     *  @update ver. 0.20.2 (edit. Hygeia)
+     *  @update ver. 0.21.1 (edit. Hygeia)
      */
-    public function editionDir(?string $file = null): string
+    public function editionDir(string $file = ''): string
     {
-        $path = Whip::redPath($this->edition_dir);
+        $path = Whip::awpContentDir($this->edition_dir);
+        $path .= $file ? DIRECTORY_SEPARATOR . $file : '';
+        return $path;
+    }
+
+    /**
+     *
+     *  @since  ver. 0.21.1 (edit. Hygeia)
+     */
+    public function productDir(string $file = ''): string
+    {
+        $path = $this->pDir();
+        $path .= $file ? DIRECTORY_SEPARATOR . $file : '';
+        return $path;
+    }
+
+    /**
+     *
+     *  @since  ver. 0.21.1 (edit. Hygeia)
+     */
+    public function projectsDir(string $file = ''): string
+    {
+        $path = $this->productDir('projects');
         $path .= $file ? DIRECTORY_SEPARATOR . $file : '';
         return $path;
     }

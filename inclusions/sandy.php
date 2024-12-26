@@ -19,7 +19,8 @@ $star = Star::getInstance();
  *   hop()
  *  ---------------------------
  */
-$sandra->hop(defined('COCORE_FAMILIAR'), 'CF');
+#$sandra->hop($orb->productDir('product.json'), '_jsons');
+#$sandra->hop(defined('COCORE_FAMILIAR'), 'CF');
 $sandra->hop($cocore, 'cocore');
 $sandra->hop($star, 'star');
 $sandra->hop($orb, 'orb');
