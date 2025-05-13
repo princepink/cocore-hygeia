@@ -6,6 +6,7 @@ since 2024-12-01
 ## Revisions
 | version | updated | memo |
 |:---:|:---:|---|
+| 0.21.1 | 2024-12-26 | concept DNA+, PetitTrianon 検討内容を試験的に実装 |
 | 0.21.0 | 2024-12-16 | concept DNA+ 導入 |
 | 0.20.2 | 2024-12-12 | PetitTrianon のブラッシュアップ |
 | 0.20.1 | 2024-12-09 | concept PetitTrianon の初期実装 |

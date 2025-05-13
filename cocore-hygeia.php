@@ -6,7 +6,7 @@ Plugin Name: CoCore Hygeia
 Plugin URI: https://cocore.biz
 Description: An edition of operation Pierre.
 Author: Pierre Pearlpuppy
-Version:	0.21.1
+Version:	0.21.2
 Author URI: https://pearlpuppy.com
 Text Domain: cocore-hygeia
 Domain Path: /languages
